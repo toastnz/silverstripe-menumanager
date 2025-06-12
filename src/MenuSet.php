@@ -37,6 +37,12 @@ class MenuSet extends DataObject implements PermissionProvider
         'MenuItems'
     ];
 
+    private static $summary_fields = [
+        'Name' => 'Name',
+        'Description' =>  'Description',
+        'MenuItems.Count' => 'Items'
+    ];
+
     private static $searchable_fields = [
         'Name',
         'Description'
@@ -272,15 +278,4 @@ class MenuSet extends DataObject implements PermissionProvider
     }
 
 
-    /**
-     * @return array
-     */
-    public function summaryFields()
-    {
-        return [
-            'Name' => _t(__CLASS__ . '.DB_Name', 'Name'),
-            'Description' => _t(__CLASS__ . '.DB_Description', 'Description'),
-            'MenuItems.Count' => _t(__CLASS__ . '.DB_Items', 'Items')
-        ];
-    }
 }
